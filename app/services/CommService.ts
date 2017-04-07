@@ -21,7 +21,7 @@ export class CommService{
                 error => console.log(error),
                 () => console.log("REST get player complete")
             );
-        alert("kiskutya");
+        alert("Kiskutya");
         this.displayedPlayersChangedSource.next(players);
     }
 }
