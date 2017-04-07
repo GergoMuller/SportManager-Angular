@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [ "es2015", "dom" ],
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "watch": true
+  },
+  "typeAcquisition": {
+    "enable": true
+  },
+  "exclude": [
+    "node_modules/*",
+    "**/*-aot.ts"
+  ]
+}

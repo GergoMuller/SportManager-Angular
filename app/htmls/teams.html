@@ -1,0 +1,11 @@
+<h1> Teams</h1>
+<ul>
+    <li *ngFor="let team of teams">
+        <h3 (click)=showPlayersOfTeam(team.id)> {{team.name}} </h3>
+        <span> {{team.email}} </span>
+        <span> {{team.id}} </span>
+        <span> {{team.foundedIn}} </span>
+        <span> {{team.wins}} </span>
+        <span> {{team.losses}} </span>
+    </li>
+</ul>

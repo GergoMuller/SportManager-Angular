@@ -1,0 +1,16 @@
+
+<h1> Players by name </h1>
+    <input type="text" [(ngModel)]=searchParam/>
+    <input type="submit" value="search" (click)= getPlayerByName() />
+    <ul>
+        <li *ngFor="let player of players">
+            <div>
+                <span> {{player.name}} </span>
+                <span> {{player.age}} </span>
+                <span> {{player.email}} </span>
+                <span> {{player.position}} </span>
+                <span> {{player.description}} </span>
+            </div>
+        </li>
+    </ul> 
+    
