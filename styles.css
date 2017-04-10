@@ -1,4 +1,10 @@
 /* Master Styles */
+.main-title{
+  font-size: 180px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border-bottom: 2px solid #666666;
+}
+
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;

@@ -13,7 +13,7 @@ export class CommService{
 
     public displayedlayersChanged$ = this.displayedPlayersChangedSource.asObservable();
 
-    getPlayersOfTeam(teamId: number){
+    public getPlayersOfTeam(teamId: number){
         let players: Player[];
         this.playerService.getPlayersByTeam(teamId)
             .subscribe(

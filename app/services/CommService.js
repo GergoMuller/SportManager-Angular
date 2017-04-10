@@ -24,7 +24,7 @@ var CommService = (function () {
         var players;
         this.playerService.getPlayersByTeam(teamId)
             .subscribe(function (res) { return players = res; }, function (error) { return console.log(error); }, function () { return console.log("REST get player complete"); });
-        alert("kiskutya");
+        alert("Kiskutya");
         this.displayedPlayersChangedSource.next(players);
     };
     return CommService;

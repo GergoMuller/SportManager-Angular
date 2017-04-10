@@ -11,20 +11,29 @@ import {HttpModule} from '@angular/http';
 import {PlayerService} from './services/PlayerDataService';
 import {TeamService} from './services/TeamDataService';
 import {CommService} from './services/CommService';
+import { RouterModule, Routes } from '@angular/router';
+import { TitleComponent } from './components/app.title.component';
+import { MainComponent } from './components/app.main.component';
 
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {path: 'main', component: AppComponent},
+      {path: 'title', component: TitleComponent}
+    ])
   ],
   declarations: [
     AppComponent,
     PlayerComponent,
-    TeamComponent
+    TeamComponent,
+    TitleComponent,
+    MainComponent
   ],
-  bootstrap: [ AppComponent, PlayerComponent, TeamComponent],
+  bootstrap: [MainComponent],
   providers: [Configuration, PlayerService, TeamService, CommService]
 })
 export class AppModule { }

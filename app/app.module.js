@@ -17,6 +17,9 @@ var http_1 = require("@angular/http");
 var PlayerDataService_1 = require("./services/PlayerDataService");
 var TeamDataService_1 = require("./services/TeamDataService");
 var CommService_1 = require("./services/CommService");
+var router_1 = require("@angular/router");
+var app_title_component_1 = require("./components/app.title.component");
+var app_main_component_1 = require("./components/app.main.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,14 +30,20 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
-            http_1.HttpModule
+            http_1.HttpModule,
+            router_1.RouterModule.forRoot([
+                { path: 'main', component: app_component_1.AppComponent },
+                { path: 'title', component: app_title_component_1.TitleComponent }
+            ])
         ],
         declarations: [
             app_component_1.AppComponent,
             app_player_component_1.PlayerComponent,
-            app_team_component_1.TeamComponent
+            app_team_component_1.TeamComponent,
+            app_title_component_1.TitleComponent,
+            app_main_component_1.MainComponent
         ],
-        bootstrap: [app_component_1.AppComponent, app_player_component_1.PlayerComponent, app_team_component_1.TeamComponent],
+        bootstrap: [app_main_component_1.MainComponent],
         providers: [app_constants_1.Configuration, PlayerDataService_1.PlayerService, TeamDataService_1.TeamService, CommService_1.CommService]
     })
 ], AppModule);
