@@ -1,13 +1,14 @@
 <h1 class="sub-component-title" > teams</h1>
-<ul>
-    <li *ngFor="let team of teams">
-        <div class="list-item" (click)=showPlayersOfTeam(team.id)>
-            <h3> {{team.name}} </h3>
-            <span> {{team.email}} </span>
-            <span> {{team.id}} </span>
-            <span> {{team.foundedIn}} </span>
-            <span> {{team.wins}} </span>
-            <span> {{team.losses}} </span>
-        </div>
-    </li>
-</ul>
+<div>
+    <ul>
+        <li *ngFor="let team of teams">
+            <div class="list-item" (click)=showPlayersOfTeam(team.id)>
+                <h3 class="teamname"> {{team.name}} </h3>
+                <span> {{team.email}} </span>
+                <span> {{team.foundedIn}} </span>
+                <span> {{team.wins}} </span>
+                <span> {{team.losses}} </span>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -25,7 +25,7 @@ var CommService = (function () {
         var players;
         this.playerService.getPlayersByTeam(teamId)
             .subscribe(function (res) { return players = res; }, function (error) { return console.log(error); }, function () { return console.log("REST get player complete"); });
-        setTimeout(function () { return _this.displayedPlayersChangedSource.next(players); }, 50);
+        setTimeout(function () { return _this.displayedPlayersChangedSource.next(players); }, 100);
     };
     return CommService;
 }());

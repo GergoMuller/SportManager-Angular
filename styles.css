@@ -8,12 +8,21 @@
 
 }
 
+.player-desc{
+  margin-top: 10px;
+}
+
+.row{
+  line-height: 1;
+}
+
 .main-title{
   font-size: 190px;
   font-weight: 900;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: white;
   margin-left: 50px;
+  margin-top: 50px;
   opacity: 0.8;
 }
 
@@ -28,13 +37,17 @@
 .list-item{
   margin: 10px;
   margin-left: 20px;
+  margin-bottom: 15px;
   padding: 10px;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.65);
   border-radius: 1px; 
   color: black;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: 750;
-  
+}
+
+.player-list-margin{
+  margin-bottom: 5px;
 }
 
 .list-item:hover{
@@ -69,23 +82,6 @@ a {
   cursor: pointer;
   cursor: hand;
 }
-button {
-  font-family: Arial;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  cursor: hand;
-}
-button:hover {
-  background-color: #cfd8dc;
-}
-button:disabled {
-  background-color: #eee;
-  color: #aaa;
-  cursor: auto;
-}
 
 nav{
     margin-left: 20px;
@@ -119,54 +115,24 @@ nav a.active {
   background-color: rgba(240,240,240,0.3); 
 }
 
+.teamname{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 700;
+}
+
+.playername{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+ul{
+  list-style-type: none
+}
+
+.teamdiv{
+  margin-top: 80px;
+}
+
 /* items class */
-.items {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 24em;
-}
-.items li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
-  border-radius: 4px;
-}
-.items li:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
-}
-.items li.selected {
-  background-color: #CFD8DC;
-  color: white;
-}
-.items li.selected:hover {
-  background-color: #BBD8DC;
-}
-.items .text {
-  position: relative;
-  top: -3px;
-}
-.items .badge {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #607D8B;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-}
-/* everywhere else */
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
+

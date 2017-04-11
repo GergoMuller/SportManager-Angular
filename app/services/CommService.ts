@@ -21,6 +21,6 @@ export class CommService{
                 error => console.log(error),
                 () => console.log("REST get player complete")
             );
-        setTimeout(() => this.displayedPlayersChangedSource.next(players), 50);
+        setTimeout(() => this.displayedPlayersChangedSource.next(players), 100);
     }
 }
