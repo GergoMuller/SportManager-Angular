@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject }    from 'rxjs/Subject';
 import { Player } from '../model/Player';
 import { PlayerService} from './PlayerDataService';
-import { TeamService} from './TeamDataService';
+import { TeamService} from './TeamDataService'
 
 @Injectable()
 export class CommService{
@@ -13,7 +13,7 @@ export class CommService{
 
     public displayedlayersChanged$ = this.displayedPlayersChangedSource.asObservable();
 
-    getPlayersOfTeam(teamId: number){
+    public getPlayersOfTeam(teamId: number){
         let players: Player[];
         this.playerService.getPlayersByTeam(teamId)
             .subscribe(
@@ -21,6 +21,7 @@ export class CommService{
                 error => console.log(error),
                 () => console.log("REST get player complete")
             );
-        setTimeout(() => this.displayedPlayersChangedSource.next(players), 50);
+        alert("Kiskutya");
+        this.displayedPlayersChangedSource.next(players);
     }
 }

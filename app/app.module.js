@@ -33,7 +33,8 @@ AppModule = __decorate([
             http_1.HttpModule,
             router_1.RouterModule.forRoot([
                 { path: 'main', component: app_component_1.AppComponent },
-                { path: 'title', component: app_title_component_1.TitleComponent }
+                { path: 'title', component: app_title_component_1.TitleComponent },
+                { path: '', component: app_title_component_1.TitleComponent }
             ])
         ],
         declarations: [

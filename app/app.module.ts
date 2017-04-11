@@ -23,7 +23,8 @@ import { MainComponent } from './components/app.main.component';
     HttpModule,
     RouterModule.forRoot([
       {path: 'main', component: AppComponent},
-      {path: 'title', component: TitleComponent}
+      {path: 'title', component: TitleComponent},
+      {path: '',  component: TitleComponent}
     ])
   ],
   declarations: [

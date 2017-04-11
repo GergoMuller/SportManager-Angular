@@ -1,8 +1,51 @@
 /* Master Styles */
+
+.bcg-image{
+  filter: grayscale(100%) brightness(40%) sepia(20%);
+  z-index: -1;
+  width: 100%;
+  position: fixed;
+
+}
+
 .main-title{
-  font-size: 180px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  border-bottom: 2px solid #666666;
+  font-size: 190px;
+  font-weight: 900;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: white;
+  margin-left: 50px;
+  opacity: 0.8;
+}
+
+.sub-component-title{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 800;
+  color: white;
+  margin: 20px;
+  margin-left: 30%;
+}
+
+.list-item{
+  margin: 10px;
+  margin-left: 20px;
+  padding: 10px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 1px; 
+  color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 750;
+  
+}
+
+.list-item:hover{
+  background: rgba(255,255,255,0.9);
+  cursor: hand;
+}
+
+.search-box{
+  margin: 20px;
+  margin-left: 70px;
+  opacity: 0.95;
 }
 
 h1 {
@@ -44,25 +87,36 @@ button:disabled {
   cursor: auto;
 }
 
+nav{
+    margin-left: 20px;
+     margin-right: 20px;
+     margin-bottom: 50px;
+}
 /* Navigation link styles */
 nav a {
-  padding: 5px 10px;
+  padding: 3px 10px;
   text-decoration: none;
   margin-right: 10px;
   margin-top: 10px;
   display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
+  border-bottom: solid 2px #888;
+  color: #333;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #fafafa;
 }
-nav a:visited, a:link {
-  color: #607D8B;
-}
+
 nav a:hover {
-  color: #039be5;
-  background-color: #CFD8DC;
+  color: #444;
+  background-color: #f5f5f5;
+  text-decoration: none;
+  border-bottom: solid 2px #fff;
 }
 nav a.active {
-  color: #039be5;
+  text-decoration: none;
+  color: #fff;
+  background-color: rgba(240,240,240,0.3); 
 }
 
 /* items class */

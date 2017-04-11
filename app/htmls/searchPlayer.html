@@ -1,10 +1,12 @@
 
-<h1> Players by name </h1>
-    <input type="text" [(ngModel)]=searchParam/>
-    <input type="submit" value="search" (click)= getPlayerByName() />
+<h1 class="sub-component-title"> players by name </h1>
+    <div class="search-box">
+        <input type="text" [(ngModel)]=searchParam/>
+        <input class="btn btn-default" type="submit" value="search" (click)= getPlayerByName() />
+    </div>
     <ul>
         <li *ngFor="let player of players">
-            <div>
+            <div class="list-item">
                 <span> {{player.name}} </span>
                 <span> {{player.age}} </span>
                 <span> {{player.email}} </span>

@@ -21,17 +21,18 @@ var CommService = (function () {
         this.displayedlayersChanged$ = this.displayedPlayersChangedSource.asObservable();
     }
     CommService.prototype.getPlayersOfTeam = function (teamId) {
-        var _this = this;
         var players;
         this.playerService.getPlayersByTeam(teamId)
             .subscribe(function (res) { return players = res; }, function (error) { return console.log(error); }, function () { return console.log("REST get player complete"); });
-        setTimeout(function () { return _this.displayedPlayersChangedSource.next(players); }, 50);
+        alert("Kiskutya");
+        this.displayedPlayersChangedSource.next(players);
     };
     return CommService;
 }());
 CommService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [PlayerDataService_1.PlayerService, TeamDataService_1.TeamService])
+    __metadata("design:paramtypes", [typeof (_a = typeof PlayerDataService_1.PlayerService !== "undefined" && PlayerDataService_1.PlayerService) === "function" && _a || Object, typeof (_b = typeof TeamDataService_1.TeamService !== "undefined" && TeamDataService_1.TeamService) === "function" && _b || Object])
 ], CommService);
 exports.CommService = CommService;
+var _a, _b;
 //# sourceMappingURL=CommService.js.map

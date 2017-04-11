@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: `
-    <player-byname></player-byname>
-    <teams></teams>
-  `
+  templateUrl: './app/htmls/appComponent.html'
 })
 export class AppComponent {}
