@@ -14,6 +14,7 @@ import {CommService} from './services/CommService';
 import { RouterModule, Routes } from '@angular/router';
 import { TitleComponent } from './components/app.title.component';
 import { MainComponent } from './components/app.main.component';
+import { PlayerDetailComponent } from './components/app.playerDetails.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { MainComponent } from './components/app.main.component';
     RouterModule.forRoot([
       {path: 'main', component: AppComponent},
       {path: 'title', component: TitleComponent},
-      {path: '',  component: TitleComponent}
+      {path: '',  component: TitleComponent},
+      {path: 'player-details', component: PlayerDetailComponent}
     ])
   ],
   declarations: [
@@ -32,7 +34,8 @@ import { MainComponent } from './components/app.main.component';
     PlayerComponent,
     TeamComponent,
     TitleComponent,
-    MainComponent
+    MainComponent,
+    PlayerDetailComponent,
   ],
   bootstrap: [MainComponent],
   providers: [Configuration, PlayerService, TeamService, CommService]

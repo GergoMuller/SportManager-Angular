@@ -3,6 +3,8 @@ import { PlayerService } from '../services/PlayerDataService';
 import { Player } from '../model/Player';
 import { CommService} from '../services/CommService';
 import { Subscription }   from 'rxjs/Subscription';
+import { Router, NavigationEnd } from '@angular/router';
+import * as _ from 'lodash';
 
 @Component({
     selector: "player-byname",
@@ -14,8 +16,9 @@ export class PlayerComponent{
     public searchParam: string= "";
     private subscription: Subscription;
     
-
-    constructor(private playerService: PlayerService, private commService: CommService ){
+    constructor(private playerService: PlayerService, 
+                private commService: CommService ,
+                private router: Router){
         this.subscription = this.commService.displayedlayersChanged$
                                 .subscribe( players => this.players = players);
     }
@@ -41,5 +44,15 @@ export class PlayerComponent{
                 error => console.log(error),
                 () => console.log("REST get player complete")
             );
+    }
+
+    public setCurrentPlayer = (player: Player): void => {
+      // let currentPlayer = _.find(this.players,(p: Player) => p.id == playerId)
+      this.commService.selectPlayer(player);
+      this.router.navigate(["/player-details"]);
+    }
+
+    ngOnDestroy(){
+        this.subscription.unsubscribe();
     }
 }

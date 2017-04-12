@@ -20,6 +20,7 @@ var CommService_1 = require("./services/CommService");
 var router_1 = require("@angular/router");
 var app_title_component_1 = require("./components/app.title.component");
 var app_main_component_1 = require("./components/app.main.component");
+var app_playerDetails_component_1 = require("./components/app.playerDetails.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,7 +35,8 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot([
                 { path: 'main', component: app_component_1.AppComponent },
                 { path: 'title', component: app_title_component_1.TitleComponent },
-                { path: '', component: app_title_component_1.TitleComponent }
+                { path: '', component: app_title_component_1.TitleComponent },
+                { path: 'player-details', component: app_playerDetails_component_1.PlayerDetailComponent }
             ])
         ],
         declarations: [
@@ -42,7 +44,8 @@ AppModule = __decorate([
             app_player_component_1.PlayerComponent,
             app_team_component_1.TeamComponent,
             app_title_component_1.TitleComponent,
-            app_main_component_1.MainComponent
+            app_main_component_1.MainComponent,
+            app_playerDetails_component_1.PlayerDetailComponent,
         ],
         bootstrap: [app_main_component_1.MainComponent],
         providers: [app_constants_1.Configuration, PlayerDataService_1.PlayerService, TeamDataService_1.TeamService, CommService_1.CommService]

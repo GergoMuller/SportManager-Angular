@@ -12,12 +12,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var PlayerDataService_1 = require("../services/PlayerDataService");
 var CommService_1 = require("../services/CommService");
+var router_1 = require("@angular/router");
 var PlayerComponent = (function () {
-    function PlayerComponent(playerService, commService) {
+    function PlayerComponent(playerService, commService, router) {
         var _this = this;
         this.playerService = playerService;
         this.commService = commService;
+        this.router = router;
         this.searchParam = "";
+        this.setCurrentPlayer = function (player) {
+            // let currentPlayer = _.find(this.players,(p: Player) => p.id == playerId)
+            _this.commService.selectPlayer(player);
+            _this.router.navigate(["/player-details"]);
+        };
         this.subscription = this.commService.displayedlayersChanged$
             .subscribe(function (players) { return _this.players = players; });
     }
@@ -35,6 +42,9 @@ var PlayerComponent = (function () {
         this.playerService.getPlayersByTeam(teamId)
             .subscribe(function (res) { return _this.players = res; }, function (error) { return console.log(error); }, function () { return console.log("REST get player complete"); });
     };
+    PlayerComponent.prototype.ngOnDestroy = function () {
+        this.subscription.unsubscribe();
+    };
     return PlayerComponent;
 }());
 PlayerComponent = __decorate([
@@ -43,7 +53,9 @@ PlayerComponent = __decorate([
         providers: [PlayerDataService_1.PlayerService],
         templateUrl: "./app/htmls/searchPlayer.html"
     }),
-    __metadata("design:paramtypes", [PlayerDataService_1.PlayerService, CommService_1.CommService])
+    __metadata("design:paramtypes", [PlayerDataService_1.PlayerService,
+        CommService_1.CommService,
+        router_1.Router])
 ], PlayerComponent);
 exports.PlayerComponent = PlayerComponent;
 //# sourceMappingURL=app.player.component.js.map

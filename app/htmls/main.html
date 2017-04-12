@@ -1,10 +1,12 @@
 <nav>
-    <a [class.active]="router.isActive('/main', false)" routerLink="/main">
-    main page
-    </a>
-
     <a [class.active]="router.isActive('/title', false)" routerLink="/title">
         title
+    </a>
+    <a [class.active]="router.isActive('/main', false)" routerLink="/main">
+        main page
+    </a>
+    <a [class.active]="router.isActive('/player-details', false)" routerLink="/player-details">
+        player-details
     </a>
 </nav>
 <router-outlet></router-outlet>

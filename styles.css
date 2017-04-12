@@ -46,6 +46,23 @@
   font-weight: 750;
 }
 
+.list-item-reverse{
+  margin: 10px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 1px; 
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.bold{
+  font-weight: 700;
+}
+
 .player-list-margin{
   margin-bottom: 5px;
 }
@@ -132,6 +149,13 @@ ul{
 
 .teamdiv{
   margin-top: 80px;
+}
+
+.details-desc{
+  padding: 100px;
+  padding-top: 20px;
+  margin: 20px;
+  border-top: solid 1px #999;
 }
 
 /* items class */

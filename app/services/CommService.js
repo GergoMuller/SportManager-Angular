@@ -18,7 +18,9 @@ var CommService = (function () {
         this.playerService = playerService;
         this.teamService = teamService;
         this.displayedPlayersChangedSource = new Subject_1.Subject();
+        this.selectedPlayerSource = new Subject_1.Subject();
         this.displayedlayersChanged$ = this.displayedPlayersChangedSource.asObservable();
+        this.selectedPlayerChanged = this.selectedPlayerSource.asObservable();
     }
     CommService.prototype.getPlayersOfTeam = function (teamId) {
         var _this = this;
@@ -26,6 +28,10 @@ var CommService = (function () {
         this.playerService.getPlayersByTeam(teamId)
             .subscribe(function (res) { return players = res; }, function (error) { return console.log(error); }, function () { return console.log("REST get player complete"); });
         setTimeout(function () { return _this.displayedPlayersChangedSource.next(players); }, 100);
+    };
+    CommService.prototype.selectPlayer = function (player) {
+        var _this = this;
+        setTimeout(function () { return _this.selectedPlayerSource.next(player); }, 50);
     };
     return CommService;
 }());
