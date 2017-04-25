@@ -13,6 +13,7 @@ var core_1 = require("@angular/core");
 var PlayerDataService_1 = require("../services/PlayerDataService");
 var CommService_1 = require("../services/CommService");
 var router_1 = require("@angular/router");
+var _ = require("lodash");
 var PlayerComponent = (function () {
     function PlayerComponent(playerService, commService, router) {
         var _this = this;
@@ -21,8 +22,8 @@ var PlayerComponent = (function () {
         this.router = router;
         this.searchParam = "";
         this.setCurrentPlayer = function (player) {
-            // let currentPlayer = _.find(this.players,(p: Player) => p.id == playerId)
-            _this.commService.selectPlayer(player);
+            var currentPlayer = _.find(_this.players, function (p) { return p.id == player.id; });
+            _this.commService.selectPlayer(currentPlayer);
             _this.router.navigate(["/player-details"]);
         };
         this.subscription = this.commService.displayedlayersChanged$

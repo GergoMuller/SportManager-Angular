@@ -47,8 +47,8 @@ export class PlayerComponent{
     }
 
     public setCurrentPlayer = (player: Player): void => {
-      // let currentPlayer = _.find(this.players,(p: Player) => p.id == playerId)
-      this.commService.selectPlayer(player);
+      let currentPlayer = _.find(this.players,(p: Player) => p.id == player.id);
+      this.commService.selectPlayer(currentPlayer);
       this.router.navigate(["/player-details"]);
     }
 
