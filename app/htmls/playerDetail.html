@@ -3,22 +3,26 @@
     <h1 class="sub-component-title"> {{currentPlayer.name}} </h1>
     <div class="list-item-reverse player-list-margin">
         <div class="row">
-            <label class="col-md-2"> age: </label>
-            <p class="col-md-10 bold"><b>{{currentPlayer.age}}</b></p>
-        </div>
-        <div class="row">
-             <label class="col-md-2"> email: </label>
-            <p class="col-md-10 bold"><b>{{currentPlayer.email}} </b></p>
-        </div>
-        <div class="row">
-             <label class="col-md-2"> position: </label>
-            <p class="col-md-10 bold"><b>{{currentPlayer.position}}</b></p>
+            
+            <img class="player-picture col-md-5" src="data:image/jpg;base64,{{currentPlayer.picture}}"/> 
+            <div class="col-md-5">
+                <div class="row">
+                    <label class="col-md-5"> age: </label>
+                    <p class="col-md-7 bold"><b>{{currentPlayer.age}}</b></p>
+                </div>
+                <div class="row">
+                    <label class="col-md-5"> email: </label>
+                    <p class="col-md-7 bold"><b>{{currentPlayer.email}} </b></p>
+                </div>
+                <div class="row">
+                    <label class="col-md-5"> position: </label>
+                    <p class="col-md-7 bold"><b>{{currentPlayer.position}}</b></p>
+                </div>
+            </div>
         </div>
         <div class="row">
             <p class="details-desc bold">{{currentPlayer.description}}</p>
         </div>
-        <div class="row">
-           <!-- <img src="data:image/jpg;base64," + {{currentPlayer.picture}}/> -->
-        </div>
+        
     </div>
 </div>

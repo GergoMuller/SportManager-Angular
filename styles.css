@@ -158,5 +158,11 @@ ul{
   border-top: solid 1px #999;
 }
 
+.player-picture{
+  height: 200px;
+  width: auto;
+  border-radius: 5%!important;
+}
+
 /* items class */
 
