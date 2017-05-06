@@ -20,7 +20,7 @@ var MainComponent = (function () {
 MainComponent = __decorate([
     core_1.Component({
         selector: "mainComp",
-        templateUrl: "./app/htmls/main.html"
+        templateUrl: "./app/htmls/main.html",
     }),
     __metadata("design:paramtypes", [router_1.Router])
 ], MainComponent);

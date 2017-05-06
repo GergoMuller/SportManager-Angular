@@ -14,6 +14,7 @@ var PlayerDataService_1 = require("../services/PlayerDataService");
 var CommService_1 = require("../services/CommService");
 var router_1 = require("@angular/router");
 var _ = require("lodash");
+var core_2 = require("@angular/core");
 var PlayerComponent = (function () {
     function PlayerComponent(playerService, commService, router) {
         var _this = this;
@@ -52,7 +53,28 @@ PlayerComponent = __decorate([
     core_1.Component({
         selector: "player-byname",
         providers: [PlayerDataService_1.PlayerService],
-        templateUrl: "./app/htmls/searchPlayer.html"
+        templateUrl: "./app/htmls/searchPlayer.html",
+        animations: [
+            core_2.trigger('playerAnim', [
+                core_2.state('*', core_2.style({
+                    opacity: 1,
+                    transform: 'translateY(0)'
+                })),
+                core_2.transition(':enter', [
+                    core_2.style({
+                        opacity: 0,
+                        transform: 'translateY(-100%)'
+                    }),
+                    core_2.animate('0.5s ease-in')
+                ]),
+                core_2.transition(':leave', [
+                    core_2.animate('0.5s ease-out', core_2.style({
+                        opacity: 0,
+                        transform: 'translateY(100%)'
+                    }))
+                ])
+            ])
+        ]
     }),
     __metadata("design:paramtypes", [PlayerDataService_1.PlayerService,
         CommService_1.CommService,

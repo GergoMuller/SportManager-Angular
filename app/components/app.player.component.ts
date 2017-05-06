@@ -5,11 +5,36 @@ import { CommService} from '../services/CommService';
 import { Subscription }   from 'rxjs/Subscription';
 import { Router, NavigationEnd } from '@angular/router';
 import * as _ from 'lodash';
+import {slideInDownAnimation} from '../components/animation';
+import { animate, AnimationEntryMetadata, state, style, transition, trigger } from '@angular/core';
 
 @Component({
     selector: "player-byname",
     providers: [PlayerService],
-    templateUrl: "./app/htmls/searchPlayer.html"
+    templateUrl: "./app/htmls/searchPlayer.html",
+    animations: [
+    trigger('playerAnim', [
+    state('*',
+      style({
+        opacity: 1,
+        transform: 'translateY(0)'
+      })
+    ),
+    transition(':enter', [
+      style({
+        opacity: 0,
+        transform: 'translateY(-100%)'
+      }),
+      animate('0.5s ease-in')
+    ]),
+    transition(':leave', [
+      animate('0.5s ease-out', style({
+        opacity: 0,
+        transform: 'translateY(100%)'
+      }))
+    ])
+  ])
+  ]
 })
 export class PlayerComponent{
     public players: Player[];

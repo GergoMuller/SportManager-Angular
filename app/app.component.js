@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var core_2 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
     }
@@ -15,7 +16,28 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        templateUrl: './app/htmls/appComponent.html'
+        templateUrl: './app/htmls/appComponent.html',
+        animations: [
+            core_2.trigger('teamsAnim', [
+                core_2.state('*', core_2.style({
+                    opacity: 1,
+                    transform: 'translateX(0)'
+                })),
+                core_2.transition(':enter', [
+                    core_2.style({
+                        opacity: 0,
+                        transform: 'translateX(-100%)'
+                    }),
+                    core_2.animate('0.5s ease-in')
+                ]),
+                core_2.transition(':leave', [
+                    core_2.animate('0.5s ease-out', core_2.style({
+                        opacity: 0,
+                        transform: 'translateY(100%)'
+                    }))
+                ])
+            ])
+        ]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
